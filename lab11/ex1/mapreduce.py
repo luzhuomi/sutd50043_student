@@ -43,6 +43,10 @@ def reduceByKey(f, kvs, acc):
     s = shuffle(kvs)
     return map(lambda p: (p[0], reduce(f,p[1],acc)), s)
 
+def reduceByKey(f, kvs):
+    s = shuffle(kvs)
+    return map(lambda p: (p[0], reduce(f,p[1])), s)
+
 
 def reduceByKey2(agg, kvs):
     s = shuffle(kvs)
